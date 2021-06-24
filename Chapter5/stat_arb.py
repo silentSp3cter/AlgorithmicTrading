@@ -17,6 +17,18 @@ for ticker in tickers:
 
 
 print(tickers_data[1].head())
+
+data = pd.DataFrame()
+i = range(1,11)
+for x in i:
+    temp3 = tickers_data[x]
+    temp3 = temp3["Close"]
+    temp4 = tickers_data[0]
+    temp4 = temp4["Close"]
+    temp5 = temp3/temp4
+    data[tickers[x]] = temp5
+data
+
 '''
 # Constants/variables that are used to compute simple moving average and price deviation from simple moving average
 SMA_NUM_PERIODS = 20  # look back period
